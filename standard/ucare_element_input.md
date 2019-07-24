@@ -51,8 +51,8 @@ Input(Radio) 는 HTML 의 `div` 요소로 작성합니다.<br/>
   - **data-default-option <span style="color:red;">(_Option_)</span>** : 추가 코드
     - 1: ["00", "전체"]
     - 2: ["00", "선택"]
-    - 4 : ["00", "== 선택 =="]
-    - 10 : ["00", "== 전체 =="]
+    - 4 : ["", "== 선택 =="]
+    - 10 : ["", "== 전체 =="]
   - **data-default-value <span style="color:red;">(_Option_)</span>** : 기본 선택값. 코드값과 value 가 동일한 경우 check 처리.
   - **data-click <span style="color:red;">(_Option_)</span>** : click 이벤트 호출할 함수명
   - **data-change <span style="color:red;">(_Option_)</span>** : change 이벤트 호출할 함수명
@@ -78,8 +78,8 @@ Input(Checkbox) 는 HTML 의 `div` 요소로 작성합니다.<br/>
   - **data-default-option <span style="color:red;">(_Option_)</span>** : 추가 코드
     - 1: ["00", "전체"]
     - 2: ["00", "선택"]
-    - 4 : ["00", "== 선택 =="]
-    - 10 : ["00", "== 전체 =="]
+    - 4 : ["", "== 선택 =="]
+    - 10 : ["", "== 전체 =="]
   - **data-default-value <span style="color:red;">(_Option_)</span>** : 기본 선택값. 코드값과 value 가 동일한 경우 check 처리.
   - **data-click <span style="color:red;">(_Option_)</span>** : click 이벤트 호출할 함수명
   - **data-change <span style="color:red;">(_Option_)</span>** : change 이벤트 호출할 함수명
@@ -103,8 +103,8 @@ Input(Checkbox) 는 HTML 의 `div` 요소로 작성합니다.<br/>
   - **data-default-option <span style="color:red;">(_Option_)</span>** : 추가 코드
     - 1: ["00", "전체"]
     - 2: ["00", "선택"]
-    - 4 : ["00", "== 선택 =="]
-    - 10 : ["00", "== 전체 =="]
+    - 4 : ["", "== 선택 =="]
+    - 10 : ["", "== 전체 =="]
   - **data-default-value <span style="color:red;">(_Option_)</span>** : 기본 선택값. 코드값과 value 가 동일한 경우 selected 처리.
 
 ***Example***
