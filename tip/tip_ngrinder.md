@@ -173,5 +173,52 @@ Script는 Groovy, Jython, Groovy Maven Project 총 3가지로 작성 가능하�
     </tbody>
  </table>
 
- - Login 처리
+ - Login 처리<br/>
+***Example***
+```java
+class TestRunner{
+    public static HTTPRequest request
+    public static Cookie[] cookies = []
 
+    @BeforeProcess
+    public static void beforeProcess() {
+        request = new HTTPRequest();
+    }
+
+    @BeforeThread
+    public void beforeThread() {
+        def threadContext = HTTPPluginControl.getThreadHTTPClientContext();
+
+        cookies = CookieModule.listAllCookies(threadContext);
+
+        cookies.each{
+            CookieModule.removeCookie(it, threadContext)
+        }
+
+        // 로그인
+        NVPair[] params = [new VNPair("user_id", "1"), new NVPair("pass_word", "./..")];
+        HTTPResponse result = request.POST("http://www.nexfron.com/login.do", params);
+
+        cookies = CookieModule.listAllCookies(threadContext)
+    }
+
+    @Before
+    public void before() {
+        Object threadContext = HTTPPluginControl.getThreadHTTPClientContext()
+
+        cookies.each {
+            CookieModule.addCookie(it, threadContext)
+
+            grinder.logger.info("{}", it)
+        }
+    }
+}
+```
+
+- Test Script 작성
+***Example***
+```java
+class TestRunner{
+
+}
+```
