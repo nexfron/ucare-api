@@ -216,9 +216,76 @@ class TestRunner{
 ```
 
 - Test Script 작성
-***Example***
+***Example 상담이력관리 조회***
 ```java
 class TestRunner{
+    // Test 선언
+    public static GTest test01;
+    
+    public static HTTPRequest request
+    public static Cookie[] cookies = []
 
+    // Parameter 선언
+    public static NVPair[] params = [];
+
+    @BeforeProcess
+    public static void beforeProcess() {
+        HTTPPluginControl.getConectionDefaults().timeout = 6000
+
+        // Test 초기화
+        test01 = new GTest(1, "상담이력관리");
+
+        request = new HTTPRequest()
+    }
+
+    @BeforeThread
+    public void beforeThread() {
+        def threadContext = HTTPPluginControl.getThreadHTTPClientContext();
+
+        cookies = CookieModule.listAllCookies(threadContext);
+
+        cookies.each{
+            CookieModule.removeCookie(it, threadContext)
+        }
+
+        // 로그인
+        NVPair[] params = [new VNPair("user_id", "1"), new NVPair("pass_word", "./..")];
+        HTTPResponse result = request.POST("http://www.nexfron.com/login.do", params);
+
+        cookies = CookieModule.listAllCookies(threadContext)
+
+        // Test 매핑
+        test01.record(this, "conslTest");
+
+        grinder.statistics.delayReports=true;
+    }
+    
+    @Before
+    public void before() {
+        Object threadContext = HTTPPluginControl.getThreadHTTPClientContext()
+
+        cookies.each {
+            CookieModule.addCookie(it, threadContext)
+
+            grinder.logger.info("{}", it)
+        }
+    }
+
+    @Test
+    public void conslTest() {
+        // Parameter
+        NVPair[] params = [
+            new VNPair("fQuery_strt_dt", "20190729"),
+            new VNPair("fQuery_end_dt", "20190802"),
+        ];
+
+        HTTPResponse result = request.POST("http://www.nexfron.com:8000/bizcons/selectConslList.do", params)
+
+		if (result.statusCode == 301 || result.statusCode == 302) {
+			grinder.logger.warn("Warning. The response may not be correct. The response code was {}.", result.statusCode); 
+		} else {
+			assertThat(result.statusCode, is(200));
+		}
+    }
 }
 ```
