@@ -289,3 +289,23 @@ class TestRunner{
     }
 }
 ```
+## 성능 테스트
+- 테스트 생성 및 설정
+<img src="http://www.nexfron.com/ucare_images/ngrinder/ngrinder_test_conf.png" width="100%" height="100%">
+    - Agent     : 사용 할 Agent 수
+    - Vuser per Agent : Agent당 가상 User(Thread를 많이 지정 할수록 좋음)
+    - Script    : Test Script
+    - Duration  : 테스트 시간
+    - Run Count : Thread당 실행 수
+    - Rame-Up   : 부하를 점차 늘리면서 진행
+
+## 테스트 결과
+<img src="http://www.nexfron.com/ucare_images/ngrinder/ngrinder_test_report.png" width="100%" height="100%"><br/>
+- 상세 보고서
+
+    - 결과
+<img src="http://www.nexfron.com/ucare_images/ngrinder/ngrinder_test_report_d.png" width="100%" height="100%"><br/>
+    - TPS (Transaction Per Second / 초당 트랜젝션 처리량)
+<img src="http://www.nexfron.com/ucare_images/ngrinder/ngrinder_test_tps.png" width="100%" height="100%"><br/>
+    - MTT (Mean Test Time) 평균 응답 시간(ms)
+<img src="http://www.nexfron.com/ucare_images/ngrinder/ngrinder_test_mtt.png" width="100%" height="100%"><br/>
