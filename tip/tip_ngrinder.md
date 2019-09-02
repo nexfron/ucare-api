@@ -292,12 +292,12 @@ class TestRunner{
 ## 성능 테스트
 - 테스트 생성 및 설정
 <img src="http://www.nexfron.com/ucare_images/ngrinder/ngrinder_test_conf.png" width="100%" height="100%">
-    - Agent     : 사용 할 Agent 수
-    - Vuser per Agent : Agent당 가상 User(Thread를 많이 지정 할수록 좋음)
-    - Script    : Test Script
-    - Duration  : 테스트 시간
-    - Run Count : Thread당 실행 수
-    - Rame-Up   : 부하를 점차 늘리면서 진행
+    - Agent     : 사용 할 Agent 수<br/>
+    - Vuser per Agent : Agent당 가상 User(Thread를 많이 지정 할수록 좋음)<br/>
+    - Script    : Test Script<br/>
+    - Duration  : 테스트 시간<br/>
+    - Run Count : Thread당 실행 수<br/>
+    - Rame-Up   : 부하를 점차 늘리면서 진행<br/>
 
 ## 테스트 결과
 <img src="http://www.nexfron.com/ucare_images/ngrinder/ngrinder_test_report.png" width="100%" height="100%"><br/>
