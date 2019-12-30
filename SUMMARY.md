@@ -23,6 +23,7 @@
 ## 개발 API
 
 ## 설치매뉴얼
+* [MyBatis XML 설정](setup/setup_mybatis_config.md)
 
 ## 개발 Tip
 * [DB별 컬럼 목록 조회](tip/tip_db_select_column.md)
