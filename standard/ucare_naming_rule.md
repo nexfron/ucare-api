@@ -2,14 +2,6 @@
 
 파일, DB 등 명명규칙에 대한 설명입니다.
 
-## 목록
- - [AppGroup Naming Rule](#AppGroup-Naming)
- - [File Naming Rule](#File-Naming-Rule)
- - [DB Naming Rule](#DB-Naming-Rule)
- - [화면 Naming Rule](#화면-Naming-Rule)
- - [기타 Naming Rule](#기타-Naming-Rule)
-
-
 ## AppGroup Naming
 
  - AppGroup은 *업무별로 구분 되어지는 Module단위의 화면을 관리하는 Folder*를 나타내며 논리적 의미를 갖는 영단어(소문자) 로 작성한다.
