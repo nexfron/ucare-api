@@ -19,7 +19,7 @@ UCARE 디렉토리 구조는 `/src/main` 기준으로 다음과 같습니다.
         <tr>
             <td rowspan=2>/java/com</td>
             <td rowspan=2>/nexfron</td>
-            <td>framgework</td>
+            <td>core</td>
             <td>UCARE 프레임워크 JAVA 소스</td>
         </tr>
         <tr>
@@ -27,15 +27,23 @@ UCARE 디렉토리 구조는 `/src/main` 기준으로 다음과 같습니다.
             <td>Applicaion 및 업무별 JAVA 소스</td>
         </tr>        
         <tr>
-            <td rowspan=3>/resource</td>
+            <td rowspan=5>/resource</td>
             <td colspan=2>/spring</td>
             <td>전자정부 프레임워크 설정 파일을 관리</td>
         </tr>
         <tr>
-            <td>/sqlmap/mappers</td>
+            <td colspan=2>/properties</td>
+            <td>properties 파일을 관리</td>
+        </tr>        
+        <tr>
+            <td rowspan=2>/sqlmap/mappers</td>
             <td>/oracle</td>
-            <td>업무별 SQL 파일을 관리</td>
+            <td>업무별 SQL(Oracle) 파일을 관리</td>
         </tr>
+        <tr>
+            <td>/mariadb</td>
+            <td>업무별 SQL(MariaDB) 파일을 관리</td>
+        </tr>        
         <tr>
             <td colspan=2>/log4j2.xml</td>
             <td>Logging 설정 파일</td>
@@ -43,26 +51,27 @@ UCARE 디렉토리 구조는 `/src/main` 기준으로 다음과 같습니다.
         <tr>
             <td rowspan=9>/webapp</td>
             <td colspan=2>/common</td>
-            <td>공통 파일(jsp, xml) 을 관리</td>
+            <td>공통 파일(jsp) 을 관리</td>
         </tr>
         <tr>
-            <td colspan=2>/css</td>
+            <td rowspan="4">/static</td>
+            <td>/css</td>
             <td>CSS 파일을 관리</td>
         </tr>
         <tr>
-            <td colspan=2>/images</td>
+            <td>/images</td>
             <td>Image 파일을 관리</td>
         </tr>
         <tr>
-            <td colspan=2>/lib</td>
-            <td>javascript 라이브러리(editor, grid, jquery 등)</td>
-        </tr>        
-        <tr>
-            <td colspan=2>/js</td>
+            <td>/js</td>
             <td>업무별 Javascript 파일 소스</td>
         </tr>
         <tr>
-            <td rowspan=3>/WEB-INF</td>
+            <td>/lib</td>
+            <td>javascript 라이브러리(editor, grid, jquery 등)</td>
+        </tr>
+        <tr>
+            <td rowspan=4>/WEB-INF</td>
             <td>/config</td>
             <td>실행 환경 파일을 관리</td>
         </tr>
@@ -74,5 +83,9 @@ UCARE 디렉토리 구조는 `/src/main` 기준으로 다음과 같습니다.
             <td>/lib</td>
             <td>프레임워크 실행에 필요한 JAVA 라이브러리(jar) 파일을 관리</td>
         </tr>
+        <tr>
+            <td>/tiles</td>
+            <td>메인화면을 구성하는 Layout JSP 파일을 관리</td>
+        </tr>        
     </tbody>
 </table>
