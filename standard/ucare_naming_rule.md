@@ -3,14 +3,14 @@
 파일, DB 등 명명규칙에 대한 설명입니다.
 
 ## 목록
- - <a href="#1">AppGroup Naming Rule</a>
- - <a href="#2">File Naming Rule</a>
- - <a href="#3">DB Naming Rule</a>
- - <a href="#4">화면 Naming Rule</a>
- - <a href="#5">기타 Naming Rule</a>
+ - [AppGroup Naming Rule](#AppGroup-Naming)
+ - [File Naming Rule](#File-Naming-Rule)
+ - [DB Naming Rule](#DB-Naming-Rule)
+ - [화면 Naming Rule](#화면-Naming-Rule)
+ - [기타 Naming Rule](#기타-Naming-Rule)
 
 
-## <a naem="1"></a>AppGroup Naming Rule
+## AppGroup Naming
 
  - AppGroup은 *업무별로 구분 되어지는 Module단위의 화면을 관리하는 Folder*를 나타내며 논리적 의미를 갖는 영단어(소문자) 로 작성한다.
  - Java Package 및 JSP / Javascrip 디렉토리는 AppGroup 명으로 생성합니다. 
@@ -119,7 +119,8 @@ AppGroup 은 다음과 같습니다.
     </tbody>
 </table>
 
-## <a name="2"></a>File Naming Rule
+
+## File Naming Rule
 
 ### JSP File
   - JSP 파일명은 AppGroup 의 prefix 로 시작합니다.
@@ -277,7 +278,7 @@ AppGroup 은 다음과 같습니다.
 </table>
 
 
-## <a name="3"></a>DB Naming Rule
+## DB Naming Rule
 
 ### Table
  - 모든 테이블명은 대문자로 한다.
@@ -444,7 +445,7 @@ AppGroup 은 다음과 같습니다.
     </tbody>
 </table>
 
-## <a name="4"></a>UI Naming Rule
+## 화면 Naming Rule
 
 ### Component
  - Component id는 Prefix(type) + Name 로 합니다.
@@ -592,7 +593,7 @@ AppGroup 은 다음과 같습니다.
     </tbody>
 </table>
 
-## <a name="5"></a>기타 Naming Rule
+## 기타 Naming Rule
 
 ### 공통코드
  - 대분류 코드는 Prefix (AppGroup) + 일련번호 로 합니다.
