@@ -359,7 +359,7 @@ AppGroup 은 다음과 같습니다.
         <tr>
             <td>SQ_ + 테이블명</td>
             <td>
-                SQ_UC_INF_BBS
+                SQ_TB_INF_BBS
             </td>
         </tr>
     </tbody>
@@ -383,7 +383,7 @@ AppGroup 은 다음과 같습니다.
         <tr>
             <td>VW_ + 테이블명</td>
             <td>
-                VW_UC_SYS_ORG
+                VW_TB_SYS_ORG
             </td>
         </tr>
     </tbody>
@@ -405,9 +405,9 @@ AppGroup 은 다음과 같습니다.
     </thead>
     <tbody>
         <tr>
-            <td>SP_ + UC_ + Prefix(AppGroup)_ + 기능 요약</td>
+            <td>SP_ + Prefix(AppGroup)_ + 기능 요약</td>
             <td>
-                SP_RST_KPI_QA_POINT
+                SP_QAS_KPI_QA_POINT
             </td>
         </tr>
     </tbody>
