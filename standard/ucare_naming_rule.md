@@ -334,8 +334,8 @@ AppGroup 은 다음과 같습니다.
         </tr>
         <tr>
             <th>일반 Index</th>
-            <th>테이블명_IDX+일련번호</th>
-            <th>TB_SYS_CODE_C_IDX1</th>
+            <th>테이블명_IX+일련번호(2자리)</th>
+            <th>TB_SYS_CODE_C_IX01</th>
         </tr>     
     </tbody>
 </table>
