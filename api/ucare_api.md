@@ -18,10 +18,11 @@ _UL.page.get(id)
 ```
 
 ***Parameters***  
-
+<div class="highlight highlight-source-js">
 <span style="color:green; font-weight:bold;">id</span> <br /> 
 <span style="color:skyblue;">Type</span> : String   <br />  
 id 의 값(value)을 반환
+</div>
 
 
 ***Return***
