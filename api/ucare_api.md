@@ -18,11 +18,11 @@ _UL.page.get(id)
 ```
 
 ***Parameters***  
-<blockquote>
+
 <span style="color:green; font-weight:bold;">id</span> <br /> 
 <span style="color:skyblue;">Type</span> : String   <br />  
 id 의 값(value)을 반환
-</blockquote>
+
 
 ***Return***
 > Type : String / Array  
