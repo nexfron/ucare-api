@@ -89,9 +89,9 @@ AppGroup 은 다음과 같습니다.
             <td>시스템관리</td>
         </tr>
         <tr>
-            <td>interface</td>
-            <td>itf</td>
-            <td>인터페이스</td>
+            <td>external</td>
+            <td>ext</td>
+            <td>외부연동</td>
         </tr>        
         <tr>
             <td>include</td>
