@@ -1135,7 +1135,7 @@ parentEl.appendChild(childEl);
 
 <!-- 
 <div id="divBtn">
-    <button type="button" id="btnTest" class="btn blue" onclick="function() {.....}"></button>
+    <button type="button" id="btnTest" class="btn blue" onclick="function() {.....}">테스트</button>
 </div>
  -->
 ```
@@ -1148,7 +1148,301 @@ parentEl.appendChild(childEl);
 
 ***Syntax***  
 ```js
-_UL.page.createElement(parentEl, tagInfo)
+_UL.page.appendTag(parentEl, tagInfo)
+```
+
+***Parameters***  
+
+<table style="width:95%">
+    <colgroup>
+        <col style="width: 25%;"/>
+        <col style="width: 15%;"/>
+        <col style="*"/>
+    </colgroup>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>parentEl</td>
+            <td>Object</td>
+            <td>부모 element 객체</td>
+        </tr>
+        <tr>
+            <td>tagInfo</td>
+            <td>Object</td>
+            <td>DOM 생성 객체 정보
+                <ul>
+                  <li>tag : element Tag</li>
+                  <li>options : element 속성</li>
+                  <li>text : element 의 Text</li>
+                  <li>event : element 에 추가할 Event</li>
+                  <li>innerHTML : element 에 추가할 HTML</li>
+                  <li>child : element 의 하위 DOM 정보</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+***Return***
+> <span style="color:green; font-weight:bold;">Type</span> : Object  
+> 부모 element 에 생성된  DOM 을 추가하여 반환
+
+***Example***
+
+```html
+<div id="divSample"></div>
+
+<script>
+var parentEl = _UL.page.getEl('divSample');
+
+var childTagInfo = {'tag'     : 'ul',
+                    'options' : {'id':'ulSample', 'class': 'ul-sample'},
+                    'child'   : [
+                        {'tag' : 'li', 'options': {'class': 'li-sample'}, 'text': '사과',
+                         'event': [{'event': 'click', 'action': function() {fnTeat('사과');}}]},
+                        {'tag' : 'li', 'options': {'class': 'li-sample'}, 'text': '배'}
+                        {'tag' : 'li', 'options': {'class': 'li-sample'}, 'text': '오렌지'}
+                    ]
+                   }
+
+_UL.page.appendTag(parentEl, childTagInfo);
+</script>
+
+<!-- 
+<div id="divSample">
+    <ul class="ul-sample">
+        <li class="li-sample" onclick="function() {fnTeat('사과');}">사과</li>
+        <li class="li-sample">배</li>
+        <li class="li-sample">오렌지</li>
+    </ul>
+</div>
+ -->
+```
+<br />
+
+### removeChild
+
+***Descrition***  
+element 에서 모든 자식 Element 를 제거합니다.
+
+***Syntax***  
+```js
+_UL.page.removeChild(id)
+```
+
+***Parameters***  
+
+<table style="width:95%">
+    <colgroup>
+        <col style="width: 25%;"/>
+        <col style="width: 15%;"/>
+        <col style="*"/>
+    </colgroup>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>id</td>
+            <td>String</td>
+            <td>대상 element id</td>
+        </tr>
+    </tbody>
+</table>
+
+***Return***
+
+***Example***
+
+```html
+<div id="divSample">
+    <div id="child1">사과</div>
+    <div id="child2">배</div>
+    <div id="child3">오렌지</div>
+</div>
+
+<script>
+_UL.page.removeChild('divSample');
+</script>
+
+<!-- 
+<div id="divSample">
+</div>
+ -->
+```
+
+<br />
+
+### createSelectOption
+
+***Descrition***  
+Select element 에 Option 을 추가합니다.
+
+***Syntax***  
+```js
+_UL.page.createSelectOption(el, optList, settings)
+```
+
+***Parameters***  
+
+<table style="width:95%">
+    <colgroup>
+        <col style="width: 25%;"/>
+        <col style="width: 15%;"/>
+        <col style="*"/>
+    </colgroup>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>el</td>
+            <td>String</td>
+            <td>대상 Select element 객체</td>
+        </tr>
+        <tr>
+            <td>optList</td>
+            <td>Array</td>
+            <td>Option 생성 데이터 목록</td>
+        </tr>
+        <tr>
+            <td>settings</td>
+            <td>Object</td>
+            <td>Option 생성을 위한 설정 정보
+                <ul>
+                  <li>textPty : 데이터 목록 (JSON List)에서 Text 프로퍼티</li>
+                  <li>valuePty : 데이터 목록 (JSON List)에서 Value 프로퍼티</li>
+                  <li>initOption : Option 초기화 여부. (true: 기존 Option 초기화 삭제, false: 미삭제)</li>
+                  <li>defaultValue : Option 기본 선택 Value</li>
+                  <li>cb : Option 생성 후, 호출 콜백함수</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+***Return***
+
+***Example***
+
+```html
+<select id="selectSample">
+    <option value='banana'>바나나</option>
+</select>
+
+<script>
+var dataList =[
+    {'code': 'apple', 'codeNm': '사과'},
+    {'code': 'pear', 'codeNm': '배'},
+    {'code': 'orange', 'codeNm': '오렌지'}
+];
+
+var tgtEl = _UL.page.getEl("selectSample");
+
+_UL.page.createSelectOption(tgtEl, dataList, {'textPty': 'codeNm', 'valuePty': 'code', 'initOption': true, 'defaultValue': 'orange'});
+</script>
+
+<!-- 
+<select id="selectSample">
+    <option value='apple'>사과</option>
+    <option value='pear'>배</option>
+    <option value='orange' selected>오렌지</option>
+</select>
+ -->
+```
+<br />
+
+### removeSelectOption
+
+***Descrition***  
+Select element 에 Option 을 삭제합니다.
+
+***Syntax***  
+```js
+_UL.page.removeSelectOption(el, defaultText, cb)
+```
+
+***Parameters***  
+
+<table style="width:95%">
+    <colgroup>
+        <col style="width: 25%;"/>
+        <col style="width: 15%;"/>
+        <col style="*"/>
+    </colgroup>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>el</td>
+            <td>String</td>
+            <td>대상 Select element 객체</td>
+        </tr>
+        <tr>
+            <td>defaultText</td>
+            <td>String</td>
+            <td>Default Text (미삭제)</td>
+        </tr>
+        <tr>
+            <td>cb</td>
+            <td>Object</td>
+            <td>Option 삭제 후, 호출 콜백함수</td>
+        </tr>
+    </tbody>
+</table>
+
+***Return***
+
+***Example***
+
+```html
+<select id="selectSample">
+    <option value='banana'>바나나</option>
+    <option value='apple'>사과</option>
+    <option value='orange' selected>오렌지</option>
+</select>
+
+<script>
+var tgtEl = _UL.page.getEl("selectSample");
+
+_UL.page.removeSelectOption(tgtEl, '사과');
+</script>
+
+<!-- 
+<select id="selectSample">
+    <option value='apple'>사과</option>
+</select>
+ -->
+```
+<br />
+
+### getChildElementsByIdStartsWith
+
+***Descrition***  
+element 의 하위 element 에서 입력한 id 로 시작하는 element 목록을 반환합니다.
+
+***Syntax***  
+```js
+_UL.page.getChildElementsByIdStartsWith(parentEl, startId)
 ```
 
 ***Parameters***  
@@ -1170,51 +1464,53 @@ _UL.page.createElement(parentEl, tagInfo)
         <tr>
             <td>parentEl</td>
             <td>String</td>
-            <td>element Tag</td>
+            <td>부모 element 객체</td>
         </tr>
         <tr>
-            <td>attrs</td>
-            <td>Object</td>
-            <td>element 속성</td>
+            <td>startId</td>
+            <td>String</td>
+            <td>시작 element id</td>
         </tr>
     </tbody>
 </table>
 
 ***Return***
-> <span style="color:green; font-weight:bold;">Type</span> : Object  
-> element 를 생성하여 반환
+> <span style="color:green; font-weight:bold;">Type</span> : Array  
+> 대상 element 의 하위 element 에서 id 가 검색 id 값으로 시작하는 element 요소 Array 를 반환
 
 ***Example***
 
 ```html
-<div id="divBtn"></div>
+<div id="divSamples">
+    <div id="page1"></div>
+    <div id="page2"></div>
+    <div id="test1"></div>
+    <div id="test2"></div>
+    <div id="page3"></div>
+</div>
 
 <script>
-var parentEl = _UL.page.getEl('divBtn');
-var childEl = _UL.page.createElement('button',
-                                     {'id':'btnTest', 'class': 'btn blue'},
-                                     '테스트',
-                                     [{'event' : 'click','action' : function() { console.log("test...");}}]);
-
-parentEl.appendChild(childEl);
+var parentEl = _UL.page.getEl('divSamples');
+_UL.page.getChildElementsByIdStartsWith(parentEl, 'page');
 </script>
+```
 
 <!-- 
-<div id="divBtn">
-    <button type="button" id="btnTest" class="btn blue" onclick="function() {.....}"></button>
-</div>
- -->
-```
+    <div id="page1"></div>
+    <div id="page2"></div>
+    <div id="page3"></div>
+-->
+
 <br />
 
-### name
+### changeTab
 
 ***Descrition***  
-element 의 값을 반환합니다.
+ucare Tab UI 에서 대상 tab 의 선택 class 를 설정합니다.
 
 ***Syntax***  
 ```js
-_UL.page.get(id)
+_UL.page.changeTab(id, index)
 ```
 
 ***Parameters***  
@@ -1238,33 +1534,38 @@ _UL.page.get(id)
             <td>String</td>
             <td>대상 element id</td>
         </tr>
+        <tr>
+            <td>index</td>
+            <td>Number</td>
+            <td>대상 tab index</td>
+        </tr>
     </tbody>
 </table>
 
 ***Return***
-> <span style="color:green; font-weight:bold;">Type</span> : String / Array  
-> input, select, textarea, radio 는 String 을 반환, checkbox 는 Array 를 반환
 
 ***Example***
 
 ```html
-<input type="text" id="userNm" value="john" />
+<ul id="tabObj" data-cmp-type="TAB" data-title="개요,관련지식,담당자,변경이력"></ul>
 
 <script>
-_UL.page.get('userNm');
-// john
+function tabObj_OnTabClick(index) {
+    _UL.page.changeTab('tabObj', index);
+    ...
+}
 </script>
 ```
 <br />
 
-### name
+### getStepCode
 
 ***Descrition***  
-element 의 값을 반환합니다.
+계층형 공통코드 목록을 반환합니다.
 
 ***Syntax***  
 ```js
-_UL.page.get(id)
+_UL.page.getStepCode(stepCode, codeLevel, upperClCode)
 ```
 
 ***Parameters***  
@@ -1284,37 +1585,51 @@ _UL.page.get(id)
     </thead>
     <tbody>
         <tr>
-            <td>id</td>
+            <td>stepCode</td>
             <td>String</td>
-            <td>대상 element id</td>
+            <td>최상위 코드분류 ('CONSL_CD': 상담유형코드,'TEAM_CD': 조직분류코드)</td>
+        </tr>
+        <tr>
+            <td>codeLevel</td>
+            <td>Number</td>
+            <td>코드레벨</td>
+        </tr>
+        <tr>
+            <td>upperClCode</td>
+            <td>String</td>
+            <td>상위분류코드</td>
         </tr>
     </tbody>
 </table>
 
 ***Return***
-> <span style="color:green; font-weight:bold;">Type</span> : String / Array  
-> input, select, textarea, radio 는 String 을 반환, checkbox 는 Array 를 반환
+> <span style="color:green; font-weight:bold;">Type</span> : Array  
+> 계층형 공통코드에서 입력 레벨의 코드정보 Array 를 반환
 
 ***Example***
 
 ```html
-<input type="text" id="userNm" value="john" />
-
 <script>
-_UL.page.get('userNm');
-// john
+var arrCnsltTyMlsfcCode = _UL.page.getStepCode('CONSL_CD', 2, 'C001');
+
+// [
+//     {'lrgeClCode': 'CONSL_CD', 'code': 'C001001', 'codeNm': '중분류코드1', ...},
+//     {'lrgeClCode': 'CONSL_CD', 'code': 'C001002', 'codeNm': '중분류코드2', ...},
+//     {'lrgeClCode': 'CONSL_CD', 'code': 'C001003', 'codeNm': '중분류코드3', ...}
+// ]
 </script>
 ```
 <br />
 
-### name
+### getCodeList
 
 ***Descrition***  
-element 의 값을 반환합니다.
+화면에서 사용되는 공통코드 목록을 반환합니다.  
+공통코드는 JAVA `Controller` 에서 model 에 정의한 공통코드에 한하여 조회됩니다.
 
 ***Syntax***  
 ```js
-_UL.page.get(id)
+_UL.page.getCodeList(code)
 ```
 
 ***Parameters***  
@@ -1334,625 +1649,28 @@ _UL.page.get(id)
     </thead>
     <tbody>
         <tr>
-            <td>id</td>
+            <td>code</td>
             <td>String</td>
-            <td>대상 element id</td>
+            <td>공통코드 대분류</td>
         </tr>
     </tbody>
 </table>
 
 ***Return***
-> <span style="color:green; font-weight:bold;">Type</span> : String / Array  
-> input, select, textarea, radio 는 String 을 반환, checkbox 는 Array 를 반환
+> <span style="color:green; font-weight:bold;">Type</span> : Array  
+> 공통코드 정보 Array 를 반환
 
 ***Example***
 
 ```html
-<input type="text" id="userNm" value="john" />
-
 <script>
-_UL.page.get('userNm');
-// john
-</script>
-```
-<br />
-
-### name
-
-***Descrition***  
-element 의 값을 반환합니다.
-
-***Syntax***  
-```js
-_UL.page.get(id)
-```
-
-***Parameters***  
-
-<table style="width:95%">
-    <colgroup>
-        <col style="width: 25%;"/>
-        <col style="width: 15%;"/>
-        <col style="*"/>
-    </colgroup>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>id</td>
-            <td>String</td>
-            <td>대상 element id</td>
-        </tr>
-    </tbody>
-</table>
-
-***Return***
-> <span style="color:green; font-weight:bold;">Type</span> : String / Array  
-> input, select, textarea, radio 는 String 을 반환, checkbox 는 Array 를 반환
-
-***Example***
-
-```html
-<input type="text" id="userNm" value="john" />
-
-<script>
-_UL.page.get('userNm');
-// john
-</script>
-```
-<br />
-
-### name
-
-***Descrition***  
-element 의 값을 반환합니다.
-
-***Syntax***  
-```js
-_UL.page.get(id)
-```
-
-***Parameters***  
-
-<table style="width:95%">
-    <colgroup>
-        <col style="width: 25%;"/>
-        <col style="width: 15%;"/>
-        <col style="*"/>
-    </colgroup>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>id</td>
-            <td>String</td>
-            <td>대상 element id</td>
-        </tr>
-    </tbody>
-</table>
-
-***Return***
-> <span style="color:green; font-weight:bold;">Type</span> : String / Array  
-> input, select, textarea, radio 는 String 을 반환, checkbox 는 Array 를 반환
-
-***Example***
-
-```html
-<input type="text" id="userNm" value="john" />
-
-<script>
-_UL.page.get('userNm');
-// john
-</script>
-```
-<br />
-
-### name
-
-***Descrition***  
-element 의 값을 반환합니다.
-
-***Syntax***  
-```js
-_UL.page.get(id)
-```
-
-***Parameters***  
-
-<table style="width:95%">
-    <colgroup>
-        <col style="width: 25%;"/>
-        <col style="width: 15%;"/>
-        <col style="*"/>
-    </colgroup>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>id</td>
-            <td>String</td>
-            <td>대상 element id</td>
-        </tr>
-    </tbody>
-</table>
-
-***Return***
-> <span style="color:green; font-weight:bold;">Type</span> : String / Array  
-> input, select, textarea, radio 는 String 을 반환, checkbox 는 Array 를 반환
-
-***Example***
-
-```html
-<input type="text" id="userNm" value="john" />
-
-<script>
-_UL.page.get('userNm');
-// john
-</script>
-```
-<br />
-
-### name
-
-***Descrition***  
-element 의 값을 반환합니다.
-
-***Syntax***  
-```js
-_UL.page.get(id)
-```
-
-***Parameters***  
-
-<table style="width:95%">
-    <colgroup>
-        <col style="width: 25%;"/>
-        <col style="width: 15%;"/>
-        <col style="*"/>
-    </colgroup>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>id</td>
-            <td>String</td>
-            <td>대상 element id</td>
-        </tr>
-    </tbody>
-</table>
-
-***Return***
-> <span style="color:green; font-weight:bold;">Type</span> : String / Array  
-> input, select, textarea, radio 는 String 을 반환, checkbox 는 Array 를 반환
-
-***Example***
-
-```html
-<input type="text" id="userNm" value="john" />
-
-<script>
-_UL.page.get('userNm');
-// john
-</script>
-```
-<br />
-
-### name
-
-***Descrition***  
-element 의 값을 반환합니다.
-
-***Syntax***  
-```js
-_UL.page.get(id)
-```
-
-***Parameters***  
-
-<table style="width:95%">
-    <colgroup>
-        <col style="width: 25%;"/>
-        <col style="width: 15%;"/>
-        <col style="*"/>
-    </colgroup>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>id</td>
-            <td>String</td>
-            <td>대상 element id</td>
-        </tr>
-    </tbody>
-</table>
-
-***Return***
-> <span style="color:green; font-weight:bold;">Type</span> : String / Array  
-> input, select, textarea, radio 는 String 을 반환, checkbox 는 Array 를 반환
-
-***Example***
-
-```html
-<input type="text" id="userNm" value="john" />
-
-<script>
-_UL.page.get('userNm');
-// john
-</script>
-```
-<br />
-
-### name
-
-***Descrition***  
-element 의 값을 반환합니다.
-
-***Syntax***  
-```js
-_UL.page.get(id)
-```
-
-***Parameters***  
-
-<table style="width:95%">
-    <colgroup>
-        <col style="width: 25%;"/>
-        <col style="width: 15%;"/>
-        <col style="*"/>
-    </colgroup>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>id</td>
-            <td>String</td>
-            <td>대상 element id</td>
-        </tr>
-    </tbody>
-</table>
-
-***Return***
-> <span style="color:green; font-weight:bold;">Type</span> : String / Array  
-> input, select, textarea, radio 는 String 을 반환, checkbox 는 Array 를 반환
-
-***Example***
-
-```html
-<input type="text" id="userNm" value="john" />
-
-<script>
-_UL.page.get('userNm');
-// john
-</script>
-```
-<br />
-
-### name
-
-***Descrition***  
-element 의 값을 반환합니다.
-
-***Syntax***  
-```js
-_UL.page.get(id)
-```
-
-***Parameters***  
-
-<table style="width:95%">
-    <colgroup>
-        <col style="width: 25%;"/>
-        <col style="width: 15%;"/>
-        <col style="*"/>
-    </colgroup>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>id</td>
-            <td>String</td>
-            <td>대상 element id</td>
-        </tr>
-    </tbody>
-</table>
-
-***Return***
-> <span style="color:green; font-weight:bold;">Type</span> : String / Array  
-> input, select, textarea, radio 는 String 을 반환, checkbox 는 Array 를 반환
-
-***Example***
-
-```html
-<input type="text" id="userNm" value="john" />
-
-<script>
-_UL.page.get('userNm');
-// john
-</script>
-```
-<br />
-
-### name
-
-***Descrition***  
-element 의 값을 반환합니다.
-
-***Syntax***  
-```js
-_UL.page.get(id)
-```
-
-***Parameters***  
-
-<table style="width:95%">
-    <colgroup>
-        <col style="width: 25%;"/>
-        <col style="width: 15%;"/>
-        <col style="*"/>
-    </colgroup>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>id</td>
-            <td>String</td>
-            <td>대상 element id</td>
-        </tr>
-    </tbody>
-</table>
-
-***Return***
-> <span style="color:green; font-weight:bold;">Type</span> : String / Array  
-> input, select, textarea, radio 는 String 을 반환, checkbox 는 Array 를 반환
-
-***Example***
-
-```html
-<input type="text" id="userNm" value="john" />
-
-<script>
-_UL.page.get('userNm');
-// john
-</script>
-```
-<br />
-
-### name
-
-***Descrition***  
-element 의 값을 반환합니다.
-
-***Syntax***  
-```js
-_UL.page.get(id)
-```
-
-***Parameters***  
-
-<table style="width:95%">
-    <colgroup>
-        <col style="width: 25%;"/>
-        <col style="width: 15%;"/>
-        <col style="*"/>
-    </colgroup>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>id</td>
-            <td>String</td>
-            <td>대상 element id</td>
-        </tr>
-    </tbody>
-</table>
-
-***Return***
-> <span style="color:green; font-weight:bold;">Type</span> : String / Array  
-> input, select, textarea, radio 는 String 을 반환, checkbox 는 Array 를 반환
-
-***Example***
-
-```html
-<input type="text" id="userNm" value="john" />
-
-<script>
-_UL.page.get('userNm');
-// john
-</script>
-```
-<br />
-
-### name
-
-***Descrition***  
-element 의 값을 반환합니다.
-
-***Syntax***  
-```js
-_UL.page.get(id)
-```
-
-***Parameters***  
-
-<table style="width:95%">
-    <colgroup>
-        <col style="width: 25%;"/>
-        <col style="width: 15%;"/>
-        <col style="*"/>
-    </colgroup>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>id</td>
-            <td>String</td>
-            <td>대상 element id</td>
-        </tr>
-    </tbody>
-</table>
-
-***Return***
-> <span style="color:green; font-weight:bold;">Type</span> : String / Array  
-> input, select, textarea, radio 는 String 을 반환, checkbox 는 Array 를 반환
-
-***Example***
-
-```html
-<input type="text" id="userNm" value="john" />
-
-<script>
-_UL.page.get('userNm');
-// john
-</script>
-```
-<br />
-
-### name
-
-***Descrition***  
-element 의 값을 반환합니다.
-
-***Syntax***  
-```js
-_UL.page.get(id)
-```
-
-***Parameters***  
-
-<table style="width:95%">
-    <colgroup>
-        <col style="width: 25%;"/>
-        <col style="width: 15%;"/>
-        <col style="*"/>
-    </colgroup>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>id</td>
-            <td>String</td>
-            <td>대상 element id</td>
-        </tr>
-    </tbody>
-</table>
-
-***Return***
-> <span style="color:green; font-weight:bold;">Type</span> : String / Array  
-> input, select, textarea, radio 는 String 을 반환, checkbox 는 Array 를 반환
-
-***Example***
-
-```html
-<input type="text" id="userNm" value="john" />
-
-<script>
-_UL.page.get('userNm');
-// john
-</script>
-```
-<br />
-
-### name
-
-***Descrition***  
-element 의 값을 반환합니다.
-
-***Syntax***  
-```js
-_UL.page.get(id)
-```
-
-***Parameters***  
-
-<table style="width:95%">
-    <colgroup>
-        <col style="width: 25%;"/>
-        <col style="width: 15%;"/>
-        <col style="*"/>
-    </colgroup>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>id</td>
-            <td>String</td>
-            <td>대상 element id</td>
-        </tr>
-    </tbody>
-</table>
-
-***Return***
-> <span style="color:green; font-weight:bold;">Type</span> : String / Array  
-> input, select, textarea, radio 는 String 을 반환, checkbox 는 Array 를 반환
-
-***Example***
-
-```html
-<input type="text" id="userNm" value="john" />
-
-<script>
-_UL.page.get('userNm');
-// john
+var arrCode = _UL.page.getCodeList('KMS001');
+
+// [
+//     {'lrgeClCode': 'KMS001', 'code': 'MNL', 'codeNm': '상담지식', ...},
+//     {'lrgeClCode': 'KMS001', 'code': 'FAQ', 'codeNm': 'FAQ', ...},
+//     {'lrgeClCode': 'KMS001', 'code': 'CASE', 'codeNm': '사례', ...}
+// ]
 </script>
 ```
 <br />
