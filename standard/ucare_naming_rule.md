@@ -93,26 +93,6 @@ AppGroup 은 다음과 같습니다.
             <td>ext</td>
             <td>외부연동</td>
         </tr>        
-        <tr>
-            <td>include</td>
-            <td></td>
-            <td>공통 include 파일</td>
-        </tr>        
-        <tr>
-            <td>login</td>
-            <td></td>
-            <td>로그인, 로그아웃</td>
-        </tr>
-        <tr>
-            <td>main</td>
-            <td></td>
-            <td>메인</td>
-        </tr>
-        <tr>
-            <td>ucare</td>
-            <td></td>
-            <td>Ucare 공통 Javascript</td>
-        </tr>
     </tbody>
 </table>
 

@@ -9,9 +9,6 @@
 * [UCARE 디렉토리 구조](standard/ucare_directory.md)
 * [명명 규칙](standard/ucare_naming_rule.md)
 * [코딩 규칙](standard/ucare_cording_rule.md)
-* [UCARE 입력 요소-Grid](standard/ucare_element_grid.md)
-* [UCARE 입력 요소-Input](standard/ucare_element_input.md)
-* [UCARE 입력 요소-Etc](standard/ucare_element_etc.md)
 * [CSS](standard/ucare_css.md)
 * [공통 include 파일](standard/ucare_include.md)
 * [SQL 작성](standard/ucare_sql_xml.md)
@@ -21,9 +18,8 @@
 * [시큐어 코딩](standard/ucare_secure_coding.md)
 
 ## 개발 API
-* [UCARE 입력 요소-Grid](standard/ucare_element_grid.md)
-* [UCARE 입력 요소-입력](standard/ucare_element_input.md)
-* [UCARE 입력 요소-Etc](standard/ucare_element_etc.md)
+* [UCARE UI - UI 구성 Element](api/ucare_ui_element.md)
+* [UCARE UI - Grid](api/ucare_ui_grid.md)
 * [UCARE API](api/ucare_api.md)
 
 ## 설치매뉴얼
