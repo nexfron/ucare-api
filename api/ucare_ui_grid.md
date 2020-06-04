@@ -3,6 +3,8 @@ UI 구성을 위한 Grid 생성 및 속성에 대한 설명입니다.
 
 ---
 
+Grid(IBSheet) 의 상세 API 는 [IBSheet API](https://www.ibsheet.com/docs/ibsheet/) 를 참조하시기 바랍니다.
+
 ## Grid Div Element 생성
 
 Grid Container 가 생성될 위치에 아래와 같은 div Tag 를 작성합니다.<br/>
