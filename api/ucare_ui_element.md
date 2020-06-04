@@ -392,13 +392,13 @@ input 의 class 는 `datepicker-here` 으로 정의합니다.
 ***Example***
 
 ```html
- - 달력(Day) 
+ <!-- 달력(Day) -->
 <input type='text' id="calSampleDay" class="datepicker-here" data-cmp-type="CLND" value="<%=DateUtil.getFormatDateTime("yyyy-MM-dd")%>" />
 
- - 달력(Month) 
+<!-- 달력(Month) -->
 <input type='text' id="calSampleMonth" class="datepicker-here" data-cmp-type="CLND" data-min-view="months" data-view="months" data-date-format="yyyy-MM" value="<%=DateUtil.getFormatDateTime("yyyy-MM")%>"/>
 
- - 달력(Year) 
+<!-- 달력(Year) -->
 <input type="text" id="calSampleYear" class="datepicker-here" data-cmp-type="CLND" data-min-view="years" data-view="years" data-date-format="yyyy" data-format="DATE" value="<%=DateUtil.getFormatDateTime("yyyy")%>" />
 ```
 <br />
