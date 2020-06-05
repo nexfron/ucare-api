@@ -23,6 +23,7 @@
 * [UCARE API - page](api/ucare_api_page.md)
 * [UCARE API - data](api/ucare_api_data.md)
 * [UCARE API - date](api/ucare_api_date.md)
+* [UCARE API - util](api/ucare_api_util.md)
 
 ## 설치매뉴얼
 * [MyBatis XML 설정](setup/setup_mybatis_config.md)
