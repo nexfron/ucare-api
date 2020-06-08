@@ -3,16 +3,13 @@
 UCARE 디렉토리 구조는 `/src/main` 기준으로 다음과 같습니다.
 
 <table>
-    <thead>
         <tr>
             <th colspan="3">디렉토리</th>
             <th>설명</th>
         </tr>
-    </thead>
-    <tbody>
         <tr>
-            <td rowspan=2>/java/com</td>
-            <td rowspan=2>/nexfron</td>
+            <td rowspan="2">/java/com</td>
+            <td rowspan="2">/nexfron</td>
             <td>core</td>
             <td>UCARE 프레임워크 JAVA 소스</td>
         </tr>
@@ -81,5 +78,4 @@ UCARE 디렉토리 구조는 `/src/main` 기준으로 다음과 같습니다.
             <td>/tiles</td>
             <td>메인화면을 구성하는 Layout JSP 파일을 관리</td>
         </tr>        
-    </tbody>
 </table>
