@@ -156,3 +156,171 @@ _UL.net.upload(url, formData, function(response) {
 });
 ```
 <br />
+
+
+## mssg
+
+message 관련 API 목록입니다.
+
+### alert
+
+***Descrition***  
+alert 메시지를 표시합니다.
+`OK` 를 클릭하면 callback 함수를 호출합니다.
+
+***Syntax***  
+```js
+_UL.mssg.alert(msg, cb)
+```
+
+***Parameters***  
+
+<table style="width:95%">
+    <colgroup>
+        <col style="width: 25%;"/>
+        <col style="width: 15%;"/>
+        <col style="*"/>
+    </colgroup>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>msg</td>
+            <td>String</td>
+            <td>메시지</td>
+        </tr>
+        <tr>
+            <td>cb</td>
+            <td>String</td>
+            <td>OK 버튼 클릭 후, 호출할 callback 함수</td>
+        </tr>
+    </tbody>
+</table>
+
+***Return***
+
+
+***Example***
+
+```js
+_UL.mssg.alert("사용자명을 입력하세요", function(){
+    _UL.page.setFocus("userNm");
+});
+```
+<br />
+
+### confirm
+
+***Descrition***  
+confirm 메시지를 표시합니다.  
+`확인` 를 클릭하면 callback 함수를 호출합니다.
+
+***Syntax***  
+```js
+_UL.mssg.confirm(msg, cb)
+```
+
+***Parameters***  
+
+<table style="width:95%">
+    <colgroup>
+        <col style="width: 25%;"/>
+        <col style="width: 15%;"/>
+        <col style="*"/>
+    </colgroup>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>msg</td>
+            <td>String</td>
+            <td>메시지</td>
+        </tr>
+        <tr>
+            <td>cb</td>
+            <td>String</td>
+            <td>OK 버튼 클릭 후, 호출할 callback 함수</td>
+        </tr>
+    </tbody>
+</table>
+
+***Return***
+
+
+***Example***
+
+```js
+_UL.mssg.confirm("저장 하시겠습니까?", function(){
+    var url = "/sys/user/insertUser.do";
+    var param = {
+        'userId' : 'smith',
+        'userNm' : '홍길동'
+    };
+    _UL.net.post(url, param, function(response){
+        console.log(response);
+    });
+});
+```
+<br />
+
+### error
+
+***Descrition***  
+error 메시지를 표시합니다.
+`OK` 를 클릭하면 callback 함수를 호출합니다.
+
+***Syntax***  
+```js
+_UL.mssg.error(msg, cb)
+```
+
+***Parameters***  
+
+<table style="width:95%">
+    <colgroup>
+        <col style="width: 25%;"/>
+        <col style="width: 15%;"/>
+        <col style="*"/>
+    </colgroup>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>msg</td>
+            <td>String</td>
+            <td>메시지</td>
+        </tr>
+        <tr>
+            <td>cb</td>
+            <td>String</td>
+            <td>OK 버튼 클릭 후, 호출할 callback 함수</td>
+        </tr>
+    </tbody>
+</table>
+
+***Return***
+
+
+***Example***
+
+```js
+_UL.mssg.error("사용자명을 입력하세요", function(){
+    console.log("Error Message Callback");
+});
+```
+<br />
