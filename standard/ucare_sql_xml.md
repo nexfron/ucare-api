@@ -10,7 +10,7 @@ MyBatis 에 대한 자세한 내용은 [myBatis](http://www.mybatis.org/mybatis-
   - 필드명 사이의 콤마(,) 는 컬럼 앞에 사용
   - 테이블 Alias 는 A,B,C 순서로 지정
   - 컬럼에 Alias 를 부여하는 경우, `AS` 를 사용
-  - SQL 식별자 `XML파일경로 - SQL ID (SQL 설명)` 를 열기(/*), 닫기(*/) 로 표시
+  - SQL 식별자 `XML파일경로 - SQL ID (SQL 설명)` 를 열기(/\*), 닫기(\*/) 로 표시
   - SELECT 는 필요한 컬럼만 포함하여 구성하고, `SELECT *` 같은 사용을 금합니다.
 
 ## SQL FORMAT
