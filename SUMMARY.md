@@ -11,7 +11,7 @@
   * [CSS](standard/ucare_css.md)
   * [JSP 작성](standard/ucare_jsp.md)
   * [SQL 작성](standard/ucare_sql_xml.md)
-  * [프로젝트 설정(global.properties)](standard/ucare_global_properties.)
+  * [프로젝트 설정(global.properties)](ucare_global_properties.md)
   * [로깅](standard/ucare_log4j2.md)
   * [Maven](standard/ucare_maven.md)
   * [시큐어 코딩](standard/ucare_secure_coding.md)
