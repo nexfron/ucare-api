@@ -9,7 +9,7 @@
   * [명명 규칙](standard/ucare_naming_rule.md)
   * [코딩 규칙](standard/ucare_cording_rule.md)
   * [CSS](standard/ucare_css.md)
-  * [공통 include 파일](standard/ucare_include.md)
+  * [JSP 작성](standard/ucare_jsp.md)
   * [SQL 작성](standard/ucare_sql_xml.md)
   * [프로젝트 설정(global.properties)](standard/ucare_global_properties.)
   * [로깅](standard/ucare_log4j2.md)
