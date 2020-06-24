@@ -622,7 +622,7 @@ input 의 class 는 `datepicker-here` 으로 정의합니다.
         <tr>
             <td>data-codes</td>
             <td>Y</td>
-            <td>상담유형 공통코드, "CONSL_CD" 로 정의합니다.</td>
+            <td>조직 공통코드, "TEAM_CD" 로 정의합니다.</td>
         </tr>
     </tbody>
 </table>
