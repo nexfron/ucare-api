@@ -20,7 +20,7 @@ nGrinder Open Source를 이용한 성능 테스트입니다.
  #### nGrinder Controller 실행
 cmd창에서 다운받은 war파일 위치로 이동하여 명령어 실행
 ```html
-[ngrinder war pah] > java -XX:MaxPermSize=200m -jar [ngrinder war fine name].war --port [임의 포드 선정]
+[ngrinder war pah] > java -XX:MaxPermSize=200m -jar [ngrinder war fine name].war --port [임의 포트 선정]
 ```
 
 ***Example***
