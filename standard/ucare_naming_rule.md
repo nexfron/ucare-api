@@ -2,8 +2,7 @@
 
 파일, DB 등 명명규칙에 대한 설명입니다.
 
-
-## AppGroup Naming Rule
+## AppGroup Naming
 
  - AppGroup은 *업무별로 구분 되어지는 Module단위의 화면을 관리하는 Folder*를 나타내며 논리적 의미를 갖는 영단어(소문자) 로 작성한다.
  - Java Package 및 JSP / Javascrip 디렉토리는 AppGroup 명으로 생성합니다. 
@@ -90,27 +89,13 @@ AppGroup 은 다음과 같습니다.
             <td>시스템관리</td>
         </tr>
         <tr>
-            <td>include</td>
-            <td></td>
-            <td>공통 include 파일</td>
+            <td>external</td>
+            <td>ext</td>
+            <td>외부연동</td>
         </tr>        
-        <tr>
-            <td>login</td>
-            <td></td>
-            <td>로그인, 로그아웃</td>
-        </tr>
-        <tr>
-            <td>main</td>
-            <td></td>
-            <td>메인</td>
-        </tr>
-        <tr>
-            <td>ucare</td>
-            <td></td>
-            <td>Ucare 공통 Javascript</td>
-        </tr>
     </tbody>
 </table>
+
 
 ## File Naming Rule
 
@@ -147,7 +132,7 @@ AppGroup 은 다음과 같습니다.
  - prefix 를 제외한 단어는 영문 대문자로 시작하며, 합성어 경우 CamelCase 를 적용합니다. 
  - Javascript 파일은 JSP 파일명과 동일 이름을 사용합니다.
 
-> 공통 Javascript 파일은 `/js/ucare` 디렉토리에 위치하며, 예외적으로 prefix 는 `ulib` 또는 `uobj` 을 사용합니다.
+> 공통 Javascript 파일은 `/js/ucare` 디렉토리에 위치하며, prefix 는 `ulib`(UCARE Library)을 사용합니다.
 
 <table style="width: 90%;">
     <colgroup>
@@ -170,6 +155,7 @@ AppGroup 은 다음과 같습니다.
         </tr>
     </tbody>
 </table>
+
 
 ### Query Xml File
   - Query XML 파일명은 AppGroup 의 prefix 로 시작합니다.
@@ -220,7 +206,7 @@ AppGroup 은 다음과 같습니다.
     <tbody>
         <tr>
             <td>Controller</td>
-            <td>/web</td>
+            <td>/controller</td>
             <td>prefix (AppGroup) + 의미있는 명사 + 'Controller'</td>
             <td>
                 sysCodeController.java<br />
@@ -238,7 +224,7 @@ AppGroup 은 다음과 같습니다.
         </tr>
         <tr>
             <td>Service Implement</td>
-            <td>/service/impl</td>
+            <td>/service</td>
             <td>prefix (AppGroup) + 의미있는 명사 + 'ServiceImpl'</td>
             <td>
                 sysCodeServiceImpl.java<br />
@@ -247,13 +233,24 @@ AppGroup 은 다음과 같습니다.
         </tr>
         <tr>
             <td>DAO</td>
-            <td>/service/impl</td>
+            <td>/dao</td>
             <td>prefix (AppGroup) + 의미있는 명사 + 'DAO'</td>
             <td>
                 sysCodeDAO.java<br />
                 (코드관리 DAO)
             </td>
-        </tr>          
+        </tr>
+        <tr>
+            <td>VO</td>
+            <td>/vo</td>
+            <td>prefix (AppGroup) + 의미있는 명사 + 'DVO'/ 'PVO'</td>
+            <td>
+                sysCodePVO.java<br />
+                (코드관리 Parameter VO)<br />
+                sysCodeDVO.java<br />
+                (코드관리 Data VO)
+            </td>
+        </tr>        
     </tbody>
 </table>
 
@@ -261,10 +258,13 @@ AppGroup 은 다음과 같습니다.
 ## DB Naming Rule
 
 ### Table
- - 모든 테이블명과 컬럼명은 대문자로 한다.
+ - 모든 테이블명은 대문자로 한다.
  - 2개 이상의 단어를 합성할 경우 ‘_’로 구분한다.
+ - 하나의 엔티티가 다수의 테이블로 구현되는 경우, 일련번호를 부여하여 명명한다.
  - 테이블 생성 및 변경 시 반드시 ERD로 관리가 되어야 한다.
  - 각 테이블의 외래키가 되거나 같은 성격의 컬럼들의 데이터타입은 반드시 통일시킨다.
+ - 테이블의 성격에 맞추어 특성구분은 다음과 같이 구분한다.
+   - M(Master,마스터), D(Detail, 상세), C(Code, 코드), H(History, 이력)
 
 <table style="width: 90%;">
     <colgroup>
@@ -279,13 +279,18 @@ AppGroup 은 다음과 같습니다.
     </thead>
     <tbody>
         <tr>
-            <td>UC_ + Prefix(AppGroup)_ + 테이블명</td>
+            <td>TB_ + Prefix(AppGroup)_ + 테이블명 + 특성구분</td>
             <td>
-                UC_SYS_CODEBOOK
+                TB_SYS_CODE_C(시스템_코드_마스터)
             </td>
         </tr>
     </tbody>
 </table>
+
+### Column
+ - 모든 컬럼명은 대문자로 한다.
+ - 컬럼명은 용어사전에 수록된 영문 약어를 이용하고, 2개 이상의 단어를 합성할 경우 ‘_’로 구분한다.
+ - 하나의 속성이 다수의 컬럼으로 구현되는 경우, 속성의 영문명에 일련번호를 부여하여 명명한다. Ex) 등록일이 여러 번 가능한 경우, 컬럼명은 `REG01_DT`, `REG02_DT` 
 
 
 ### Index
@@ -310,12 +315,12 @@ AppGroup 은 다음과 같습니다.
         <tr>
             <th>PK Index</th>
             <th>테이블명_PK</th>
-            <th>UC_SYS_CODEBOOK_PK</th>
+            <th>TB_SYS_CODE_C_PK</th>
         </tr>
         <tr>
             <th>일반 Index</th>
-            <th>테이블명_IDX+일련번호</th>
-            <th>UC_SYS_CODEBOOK_IDX1</th>
+            <th>테이블명_IX+일련번호(2자리)</th>
+            <th>TB_SYS_CODE_C_IX01</th>
         </tr>     
     </tbody>
 </table>
@@ -339,7 +344,7 @@ AppGroup 은 다음과 같습니다.
         <tr>
             <td>SQ_ + 테이블명</td>
             <td>
-                SQ_UC_INF_BBS
+                SQ_TB_INF_BBS
             </td>
         </tr>
     </tbody>
@@ -363,7 +368,7 @@ AppGroup 은 다음과 같습니다.
         <tr>
             <td>VW_ + 테이블명</td>
             <td>
-                VW_UC_SYS_ORG
+                VW_TB_SYS_ORG
             </td>
         </tr>
     </tbody>
@@ -385,9 +390,9 @@ AppGroup 은 다음과 같습니다.
     </thead>
     <tbody>
         <tr>
-            <td>SP_ + UC_ + Prefix(AppGroup)_ + 기능 요약</td>
+            <td>SP_ + Prefix(AppGroup)_ + 기능 요약</td>
             <td>
-                SP_RST_KPI_QA_POINT
+                SP_QAS_KPI_QA_POINT
             </td>
         </tr>
     </tbody>
@@ -417,34 +422,7 @@ AppGroup 은 다음과 같습니다.
     </tbody>
 </table>
 
-## 기타 Naming Rule
-
-### 공통코드
- - 대분류 코드는 Prefix (AppGroup) + 일련번호 로 합니다.
- - 단, UCARE 공통 코드는 명명규칙에서 예외사항이다. USEYN(사용여부) 등
- - 대분류 코드 구분 코드는 ‘##’으로 합니다.
- - 소분류 코드에 대한 규칙은 없으나 되도록이면 코드에 의미를 부여하는 것을 권장합니다.
-
-<table style="width: 90%;">
-    <colgroup>
-        <col style="width: 60%;"/>
-        <col style="width: 40%;"/>
-    </colgroup>
-    <thead>
-        <tr>
-            <th>Naming Rule</th>
-            <th>Example</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Prefix (AppGroup)  + 일련번호</td>
-            <td>
-                COM001
-            </td>
-        </tr>
-    </tbody>
-</table>
+## 화면 Naming Rule
 
 ### Component
  - Component id는 Prefix(type) + Name 로 합니다.
@@ -494,6 +472,131 @@ AppGroup 은 다음과 같습니다.
             <th>tab</th>
             <th>tabMenu</th>
         </tr>     
+    </tbody>
+</table>
+
+<br/>  
+
+ - 기본 버튼 Component 명칭은 아래와 같이 정의합니다.
+ - 기본 버튼 Component 명칭은 표준용어를 사용하여 정의합니다. 
+<table>
+    <colgroup>
+        <col style="width: 20%;"/>
+        <col style="width: 30%;"/>
+        <col style="width: 50%;"/>
+    </colgroup>
+    <thead>
+        <tr>
+            <th>버튼명</th>
+            <th>버튼 Name(Id)</th>
+            <th>설명</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>조회</td>
+            <td>btnSearch</td>
+            <td>입력한 조건의 데이터를 조회하는 처리</td>
+        </tr>
+        <tr>
+            <td>초기화</td>
+            <td>btnInit</td>
+            <td>화면의 데이터를 초기값으로 변경하는 화면 처리</td>
+        </tr>
+        <tr>
+            <td>신규</td>
+            <td>btnNew</td>
+            <td>신규 데이터를 입력하기 위한 화면 처리</td>
+        </tr>
+        <tr>
+            <td>수정</td>
+            <td>btnUpdate</td>
+            <td>기입력 데이터를 수정하기 위한 처리</td>
+        </tr>
+        <tr>
+            <td>삭제</td>
+            <td>btnDelete</td>
+            <td>기입력 데이터를 삭제하기 위한 처리</td>
+        </tr>
+        <tr>
+            <td>저장</td>
+            <td>btnSave</td>
+            <td>데이터를 신규입력 또는 수정하기 위한 처리</td>
+        </tr>
+        <tr>
+            <td>닫기</td>
+            <td>btnClose</td>
+            <td>화면을 닫기(Close) 위한 처리</td>
+        </tr>
+        <tr>
+            <td>취소</td>
+            <td>btnCancel</td>
+            <td>현재 화면 상태를 이전 상태로 복귀하는 처리</td>
+        </tr>
+        <tr>
+            <td>선택</td>
+            <td>btnChoice</td>
+            <td>데이터 목록에서 다음 동작을 위해 선택</td>
+        </tr>
+        <tr>
+            <td>적용</td>
+            <td>btnApply</td>
+            <td>선택 데이터를 (상태)변경하기 위한 처리</td>
+        </tr>
+        <tr>
+            <td>추가</td>
+            <td>btnAdd</td>
+            <td> 데이터를 입력하기 위하여 목록에 Row를 추가</td>
+        </tr>
+        <tr>
+            <td>승인</td>
+            <td>btnApproval</td>
+            <td>요청 상태의 데이터를 승인하는 처리</td>
+        </tr>
+        <tr>
+            <td>엑셀</td>
+            <td>btnExcel</td>
+            <td>데이터 목록을 엑셀 파일로 변환하여 다운로드 하는 처리</td>
+        </tr>
+        <tr>
+            <td>업로드</td>
+            <td>btnUpload</td>
+            <td>파일을 업로드하는 처리</td>
+        </tr>
+        <tr>
+            <td>다운로드</td>
+            <td>btnDownload</td>
+            <td>파일을 다운로드 하는 처리</td>
+        </tr>                
+    </tbody>
+</table>
+
+## 기타 Naming Rule
+
+### 공통코드
+ - 대분류 코드는 Prefix (AppGroup) + 일련번호 로 합니다.
+ - 단, UCARE 공통 코드는 명명규칙에서 예외사항이다. USEYN(사용여부) 등
+ - 대분류 코드 구분 코드는 ‘##’으로 합니다.
+ - 소분류 코드에 대한 규칙은 없으나 되도록이면 코드에 의미를 부여하는 것을 권장합니다.
+
+<table style="width: 90%;">
+    <colgroup>
+        <col style="width: 60%;"/>
+        <col style="width: 40%;"/>
+    </colgroup>
+    <thead>
+        <tr>
+            <th>Naming Rule</th>
+            <th>Example</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Prefix (AppGroup)  + 일련번호</td>
+            <td>
+                COM001
+            </td>
+        </tr>
     </tbody>
 </table>
 

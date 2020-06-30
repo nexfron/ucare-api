@@ -215,7 +215,3 @@ CONFIG.SYS.CHK.LOGIN = false
         </tr>
     </tbody>
 </table>
-
-
-
-
