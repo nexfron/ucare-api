@@ -309,3 +309,5 @@ class TestRunner{
 <img src="http://www.nexfron.com/ucare_images/ngrinder/ngrinder_test_tps.png" width="100%" height="100%"><br/>
     - MTT (Mean Test Time) 평균 응답 시간(ms)
 <img src="http://www.nexfron.com/ucare_images/ngrinder/ngrinder_test_mtt.png" width="100%" height="100%"><br/>
+
+## 프로젝트 별 적용 사례 및 참고
