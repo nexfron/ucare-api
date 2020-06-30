@@ -310,4 +310,18 @@ class TestRunner{
     - MTT (Mean Test Time) 평균 응답 시간(ms)
 <img src="http://www.nexfron.com/ucare_images/ngrinder/ngrinder_test_mtt.png" width="100%" height="100%"><br/>
 
-## 프로젝트 별 적용 사례 및 참고
+## 적용 사례 및 참고
+### 정보제공 : 채준범
+    - 외부 Agent에서 Controller 접속 할 경우 Agent 설정 변경
+        - 설정 파일명 : __agent.conf (ngrinder agent tar파일 압축해제한 폴더 내에 존재)
+        - 적용이 안된 경우 : C:\Users\{pc name}\.ngrinder_agent\agent.conf 파일을 수정하거나, 해당 폴더를 전제 삭제후 agent 재실행
+    - Agent와 Controller 연결 Port(단방향)
+        - Agent : Any ==> Controller : 16001
+        - Agent : Any ==> Controller : 12000 ~ 12000+(the number of concorrent tests allowed)
+        참조 : http://ngrinder.642.n7.nabble.com/nGrinder-td1046.html
+    - Agent가 부하를 주지 못할 경우
+        - Agent PC를 늘리거나 User 세팅 수를 중려서 테스트 진행.
+    - WAS Server TIME_WAIT SOCKET
+        - 서버 파라미터 변경으로 TIME_WAIT SOCKET 설정을 변경하여 TCP 성능을 향상시킬 수 있음.
+        참조 : https://www.slideshare.net/ienvyou/v13-122857784 (31page)
+               https://meetup.toast.com/posts/55
