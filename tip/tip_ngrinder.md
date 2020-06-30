@@ -320,7 +320,7 @@ class TestRunner{
         - Agent : Any ==> Controller : 12000 ~ 12000+(the number of concorrent tests allowed)
         참조 : http://ngrinder.642.n7.nabble.com/nGrinder-td1046.html
     - Agent가 부하를 주지 못할 경우
-        - Agent PC를 늘리거나 User 세팅 수를 중려서 테스트 진행.
+        - Agent PC를 늘리거나 User 세팅 수를 줄여 테스트 진행.
     - WAS Server TIME_WAIT SOCKET
         - 서버 파라미터 변경으로 TIME_WAIT SOCKET 설정을 변경하여 TCP 성능을 향상시킬 수 있음.
         참조(서버 파라미터 변경 방법) : https://www.slideshare.net/ienvyou/v13-122857784 (31page)
