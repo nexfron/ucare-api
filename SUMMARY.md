@@ -28,7 +28,7 @@
     * [UCARE JS API - net / mssg](api/ucare_api_net_mssg.md)
 
 ## UCARE 개발가이드
-  * [로그인](devguide/login_dev_guide.md)
+  * [로그인 커스터마이징](devguide/login_dev_guide.md)
 
 
 ## 설치매뉴얼

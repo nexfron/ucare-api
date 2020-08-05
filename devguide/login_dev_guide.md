@@ -26,12 +26,12 @@ CONFIG.PRJ.MAIN.PAGE=layout-main
 ```
 
  - Login Path 변경  
-   1. `global.properties` 의 `CONFIG.PRJ.LOGIN.PATH` 를 변경  
+   * `global.properties` 의 `CONFIG.PRJ.LOGIN.PATH` 를 변경  
       ```
       # 로그인 Path
       CONFIG.PRJ.LOGIN.PATH=/ucare/login.do
       ```   
-   2. `LoginController.java` 의 RequestMapping 변경
+   * `LoginController.java` 의 RequestMapping 변경
       ```java
       @Controller
       @RequestMapping(value="ucare/login")
@@ -41,12 +41,12 @@ CONFIG.PRJ.MAIN.PAGE=layout-main
       ```
 
  - Main 화면layout 변경
-   1. `global.properties` 의 `CONFIG.PRJ.MAIN.PAGE` 를 변경  
+   * `global.properties` 의 `CONFIG.PRJ.MAIN.PAGE` 를 변경  
       ```
       # 메인화면 layout
       CONFIG.PRJ.MAIN.PAGE=layout-main-ucare
       ```   
-   2. `tiles.xml` 의 definition 변경  
+   * `tiles.xml` 의 definition 변경  
       ```xml
       <definition name="layout-main-ucare" template="/WEB-INF/tiles/ucare/layout-main-ucare.jsp">
         <put-attribute name="mainTop" value="/WEB-INF/tiles/ucare/mainTop.jsp" />
