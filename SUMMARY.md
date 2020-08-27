@@ -29,7 +29,7 @@
 
 ## UCARE 개발가이드
   * [로그인 커스터마이징](devguide/login_dev_guide.md)
-
+  * [배치 가이드](devguide/batch_guide.md)
 
 ## 설치매뉴얼
   * [MyBatis XML 설정](setup/setup_mybatis_config.md)
