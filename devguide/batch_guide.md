@@ -53,10 +53,10 @@
 	</bean>
     ```
 
-      * 작업 수행을 얼마 간격으로 할 것인지 설정
+    * 작업 수행을 얼마 간격으로 할 것인지 설정
+      
+      [참고] cron 표현식 작성법 https://zamezzz.tistory.com/197
 
-        [참고] cron 표현식 작성법 https://zamezzz.tistory.com/197
-        
     ```xml
     <bean id="batchConslTypeStatisticsTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
 		<property name="jobDetail" ref="batchConslTypeStatisticsJob" />
