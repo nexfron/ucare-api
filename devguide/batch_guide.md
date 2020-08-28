@@ -9,6 +9,7 @@
 | `java` | com\nexfron\core\batch |
 
 
+
 ### 배치 관련 설정 및 변경
 *(예시 : 상담유형별 통계 배치 테이블)*
 
@@ -26,22 +27,33 @@
 
       @PostConstruct // init method는 WAS가 띄워질 때 실행 
 	  private void init() {
+        if (logger.isDebugEnabled()) {
+            logger.debug("BatchConslTypeStatisticsServiceImpl.init START");
+        }
+
         // 기존 데이터 삭제
         this.batchConslTypeStatisticsDAO.deleteDataNoAOP("batchConslTypeStatistics.deleteConslTypeStatistics", new BatchConslTypeStatisticsDVO());
         
         // 당일 상담이력 데이터를 집계 테이블에 INSERT
         int rslt = this.batchConslTypeStatisticsDAO.insertDataNoAOP("batchConslTypeStatistics.insertConslTypeStatistics", new BatchConslTypeStatisticsDVO());
+        
+        if (logger.isDebugEnabled()) {
+            logger.debug("BatchConslTypeStatisticsServiceImpl.init END");
+        }
 	  }
 	
       @Override
       @Async
       public void insertConslTypeData() {
+        if (logger.isDebugEnabled()) {
+            logger.debug("### BatchConslTypeStatisticsServiceImpl.insertConslTypeData CALL");
+        }
+
         this.init();
       }
 
       ...
       ```
-
 
  - `context-scheduling.xml` 파일 변경
     * 수행될 작업 설정
@@ -77,4 +89,12 @@
 
 
 
+### 실행결과
+- @PostConstruct annotation을 설정해놓은 init 함수는 WAS가 띄워질 때 실행된다.
 
+  ![실행결과1]()
+
+- 이후 cron 표현식으로 설정한 시간마다 실행된다. 이 때는 targetMethod에 설정한 함수를 호출한다.
+
+  ![실행결과2]()
+  
