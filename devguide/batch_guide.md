@@ -92,9 +92,11 @@
 ### 실행결과
 - @PostConstruct annotation을 설정해놓은 init 함수는 WAS가 띄워질 때 실행된다.
 
-  ![실행결과1]()
+  따라서 insertConslTypeData 함수의 로그는 찍히지 않는다.
+
+  ![실행로그1](http://www.nexfron.com/ucare_images/batchGuide/resultLog1.png)
 
 - 이후 cron 표현식으로 설정한 시간마다 실행된다. 이 때는 targetMethod에 설정한 함수를 호출한다.
 
-  ![실행결과2]()
+  ![실행로그2](http://www.nexfron.com/ucare_images/batchGuide/resultLog2.png)
   
