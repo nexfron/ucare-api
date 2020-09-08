@@ -277,11 +277,11 @@ _UL.page.data(id, key, value)
 
 <script>
 // get 샘플
-_UL.page.attr('userNm', "required");
+_UL.page.data('userNm', "required");
 // false
 
 // set 샘플
-_UL.page.attr('userNm', "required", "true");
+_UL.page.data('userNm', "required", "true");
 </script>
 ```
 <br />
@@ -613,6 +613,59 @@ _UL.page.hasClass('warning');
 ```
 <br />
 
+### toggleClass
+
+***Descrition***  
+element 에 class 존재여부 확인하여 toggle 처리합니다. 
+
+***Syntax***  
+```js
+_UL.page.toggleClass(el, className)
+```
+
+***Parameters***  
+
+<table style="width:95%">
+    <colgroup>
+        <col style="width: 25%;"/>
+        <col style="width: 15%;"/>
+        <col style="*"/>
+    </colgroup>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>el</td>
+            <td>String/Object</td>
+            <td>대상 element id 또는 element 객체</td>
+        </tr>
+        <tr>
+            <td>className</td>
+            <td>String</td>
+            <td>Toggle class Name</td>
+        </tr>
+    </tbody>
+</table>
+
+***Return***
+
+***Example***
+
+```html
+<div id="divTest" class="show"></div>
+
+<script>
+var testEl = _UL.page.getEl('divTest');
+_UL.page.toggleClass(testEl, 'show');
+</script>
+```
+<br />
+
 ### focus
 
 ***Descrition***  
@@ -711,6 +764,62 @@ _UL.page.getText(id)
 <script>
 _UL.page.getText('testSelect');
 // 일반
+</script>
+```
+<br />
+
+### getRadioText
+
+***Descrition***  
+Radio element 에서 Checked Text 를 반환합니다.
+Radio 는 `input`  과 `label` 구조로 되어 있어야 하며, label 에 for 속성이 정의되어야 합니다.
+
+***Syntax***  
+```js
+_UL.page.getRadioText(name)
+```
+
+***Parameters***  
+
+<table style="width:95%">
+    <colgroup>
+        <col style="width: 25%;"/>
+        <col style="width: 15%;"/>
+        <col style="*"/>
+    </colgroup>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>name</td>
+            <td>String</td>
+            <td>대상 Radio Name</td>
+        </tr>
+    </tbody>
+</table>
+
+***Return***
+> <span style="color:green; font-weight:bold;">Type</span> : String  
+> radio 에서 checked Text 반환
+
+***Example***
+
+```html
+<input type="radio" id="recallTyCode_0" name="recallTyCode" value="" title="전체">
+<label for="sRecallTyCode_0" class="mr-10">전체</label>
+<input type="radio" id="recallTyCode_1" name="recallTyCode" value="RECL" title="재통화예약" checked>
+<label for="sRecallTyCode_1" class="mr-10">재통화예약</label>
+<input type="radio" id="recallTyCode_2" name="recallTyCode" value="CB" title="콜백">
+<label for="sRecallTyCode_2" class="mr-10">콜백</label>
+
+<script>
+_UL.page.getRadioText('recallTyCode');
+// 재통화예약
 </script>
 ```
 <br />
@@ -1552,6 +1661,79 @@ _UL.page.changeTab(id, index)
 <script>
 function tabObj_OnTabClick(index) {
     _UL.page.changeTab('tabObj', index);
+    ...
+}
+</script>
+```
+<br />
+
+### toggleGroupTab
+
+***Descrition***  
+ucare Tab UI에서 Tab 선택 시, 선택 div 를 표시(display 변경) 합니다.
+
+***Syntax***  
+```js
+_UL.page.toggleGroupTab(showId, tabGroupId)
+```
+
+***Parameters***  
+
+<table style="width:95%">
+    <colgroup>
+        <col style="width: 25%;"/>
+        <col style="width: 15%;"/>
+        <col style="*"/>
+    </colgroup>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>showId</td>
+            <td>String</td>
+            <td>표시할 div element id</td>
+        </tr>
+        <tr>
+            <td>tabGroupId</td>
+            <td>String</td>
+            <td>대상 tab group id (`data-tab-group` 로 정의함)</td>
+        </tr>
+    </tbody>
+</table>
+
+***Return***
+
+***Example***
+
+```html
+<ul id="tabMainFunc" data-cmp-type="TAB" data-title="상담등록,재통화/콜백,캠페인"></ul>
+<div id="tabMainConslSave" data-tab-group="tabMainFuncGroup"></div>
+<div id="tabMainReCall" data-tab-group="tabMainFuncGroup" style="display: none;" ></div>
+<div id="tabMainCampaign" data-tab-group="tabMainFuncGroup" style="display: none;" ></div>
+
+<script>
+function tabObj_OnTabClick(index) {
+
+    switch (index) {
+        case 0: // 상담등록
+            _UL.page.toggleGroupTab('tabMainConslSave', 'tabMainFuncGroup');
+            break;
+
+        case 1: // 재통화/콜백
+            _UL.page.toggleGroupTab('tabMainReCall', 'tabMainFuncGroup');
+            break;
+
+        case 2: // 캠페인
+            _UL.page.toggleGroupTab('tabMainCampaign', 'tabMainFuncGroup');
+            break;
+
+        default: break;
+    }    
     ...
 }
 </script>
