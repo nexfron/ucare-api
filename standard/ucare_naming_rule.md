@@ -159,7 +159,7 @@ AppGroup 은 다음과 같습니다.
 
 ### Query Xml File
   - Query XML 파일명은 AppGroup 의 prefix 로 시작합니다.
-  - prefix 를 제외한 단어는 영문 대문자로 시작하며, 합성어 경우 CamelCase 를 적용합니다.
+  - 영문 대문자로 시작하며, 합성어 경우 CamelCase 를 적용합니다.
 
 <table style="width: 90%;">
     <colgroup>
@@ -185,7 +185,7 @@ AppGroup 은 다음과 같습니다.
 
 ### Java File
   - Java 파일명은 AppGroup 의 prefix 로 시작합니다.
-  - prefix 를 제외한 단어는 영문 대문자로 시작하며, 합성어 경우 CamelCase 를 적용합니다.
+  - 영문 대문자로 시작하며, 합성어 경우 CamelCase 를 적용합니다.
   - Spring MVC 구조에서 JAVA 파일은 Controller, Service, Service implement, DAO 파일을 가지며, 각 파일의 suffix 는 파일 종류에 따라 아래와 같이 사용합니다.
 
 <table style="width: 90%;">
