@@ -39,6 +39,10 @@ UCARE 의 로그인 정책 관련 설정을 하기 위한 시스템 내용을 �
 
 
 ### 로그인 체크
+
+`checkLogin` 메소드에서 로그인 정책에 대한 check 를 합니다.  
+로그인 체크 결과는 LoginConstant 클래스의 LOGIN_PROC_RESULTCODE 에 정의
+
 ```java
   // LoginController.java
   public void checkLogin...() {
@@ -91,7 +95,7 @@ UCARE 의 로그인 정책 관련 설정을 하기 위한 시스템 내용을 �
   @RequestMapping(value = "main")
   public String main() {
     if (isIdLockTermPwdRenewal) {
-      model.addAttribute("pwdRenewalDays"	      , pwdRenewalDays);       // 비밀번호 갱신 일자
+      model.addAttribute("pwdRenewalDays"	    , pwdRenewalDays);       // 비밀번호 갱신 일자
       model.addAttribute("pwdRenewalAlertDays"  , pwdRenewalAlertDays);  // 비밀번호 갱신 알림일자
     }
   }
@@ -103,7 +107,7 @@ UCARE 의 로그인 정책 관련 설정을 하기 위한 시스템 내용을 �
         'OPTIONS'    : {
           'isIdCheck'	: false,	// 사용자 ID 비밀번호 포함 제외 체크 여부
           'lengthMin'	: 8,		// 비밀번호 최소 자리수 설정
-          'isNumber'		: true,		// 숫자 포함여부
+          'isNumber'	: true,		// 숫자 포함여부
           'isLower'		: false,	// 소문자 포함여부
           'isUpper'		: false,	// 대문자 포함여부
           'isAlphabet'	: true,		// 영문자(대소문자) 포함여부
