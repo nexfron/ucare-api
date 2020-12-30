@@ -32,7 +32,7 @@
   * [배치 가이드](devguide/batch_guide.md)
   * [로그인 보안정책 설정 가이드](devguide/login_security_guide.md)
   * [CTI 개발 가이드](devguide/cti_dev_guide.md)
-  * [라이센스 가이드](devguide/licence_guide.md)
+  <!-- * [라이센스 가이드](devguide/licence_guide.md) -->
   * [WebSocket 개발 가이드](devguide/websocket_guide.md)
   * [윈도우 Notification 개발 가이드](devguide/notification_guide.md)
 
