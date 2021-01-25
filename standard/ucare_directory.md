@@ -4,8 +4,8 @@ UCARE 디렉토리 구조는 `/src/main` 기준으로 다음과 같습니다.
 
 |디렉토리|||설명|
 |-------|-------|-------|-------|
-|/java/com|/nexfron|core|UCARE 프레임워크 JAVA 소스|
-|||ucareapp|Application 및 업무별 JAVA 소스|
+|/java/com|/nexfron|/core|UCARE 프레임워크 JAVA 소스|
+|||/ucareapp|Application 및 업무별 JAVA 소스|
 |/resource|/spring||전자정부 프레임워크 설정 파일을 관리
 ||/properties||properties 파일을 관리
 ||/sqlmap/mappers|/oracle|업무별 SQL(Oracle) 파일을 관리
