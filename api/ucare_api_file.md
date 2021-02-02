@@ -9,8 +9,8 @@ File Upload 관련 API 목록입니다.
 
 ### render
 
-***Descrition***
-Dom에 File Element를 렌더링하고 파일 정보 배열을 반환한다.
+***Descrition***  
+Dom에 File Element를 렌더링하고 파일 정보 배열을 반환합니다.
 
 ***Syntax***
 ```js
@@ -41,7 +41,7 @@ _UL.file.render(name)
 </table>
 
 ***Return***
-> <span style="color:green; font-weight:bold;">Type</span> : Object Array
+> <span style="color:green; font-weight:bold;">Type</span> : Object Array  
 > 해당 name Element의 Dataset 정보를 Object Array로 반환
 
 ***Example***
@@ -88,7 +88,7 @@ _upg.fileFormOptions = _UL.file.render('fileForm');
 
 ### clearFileList
 
-***Descrition***
+***Descrition***  
 File 정보 및 파일 목록을 삭제합니다.
 
 ***Syntax***
@@ -130,7 +130,7 @@ _UL.file.clearFileList('wbs');
 
 ### setFileList
 
-***Description***
+***Description***  
 파일 목록에 Upload File 추가합니다.
 
 ***Syntax***
@@ -214,7 +214,7 @@ _UL.net.post("/smp/file/smpFileSrch.do", param, function(response) {
 
 ### getFormData
 
-***Description***
+***Description***  
 Upload 할 파일 정보를 FormData 객체에 담아 반환한다.
 
 ***Syntax***
@@ -251,7 +251,7 @@ _UL.file.getFormData(fileOptions, formData);
 </table>
 
 ***Return***
-> <span style="color:green; font-weight:bold;">Type</span> : Object
+> <span style="color:green; font-weight:bold;">Type</span> : Object  
 > 파일 업로드를 위해 업로드 대상 파일 정보를 FormData에 담아 반환.
 
 ***Example***
