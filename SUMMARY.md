@@ -26,6 +26,7 @@
     * [UCARE JS API - date](api/ucare_api_date.md)
     * [UCARE JS API - util](api/ucare_api_util.md)
     * [UCARE JS API - net / mssg](api/ucare_api_net_mssg.md)
+    * [UCARE JS API - file](api/ucare_api_file.md)
 
 ## UCARE 개발가이드
   * [로그인 커스터마이징](devguide/login_dev_guide.md)
