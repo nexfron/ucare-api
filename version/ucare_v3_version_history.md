@@ -3,8 +3,9 @@
 ## V3.0.1
 
 ### 적용내용
-- **[UCARE API]**
-멀티 File Upload API 적용(uclib_file.js)
+- **2021년 2월 2일**
+    **[UCARE API]**
+    멀티 File Upload API 적용(uclib_file.js)
 
 ### 업데이트 예정
 - **[캠페인관리]** 실행결과 추가   
