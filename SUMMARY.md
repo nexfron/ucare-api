@@ -36,6 +36,7 @@
   <!-- * [라이센스 가이드](devguide/licence_guide.md) -->
   * [WebSocket 개발 가이드](devguide/websocket_guide.md)
   * [윈도우 Notification 개발 가이드](devguide/notification_guide.md)
+  * [Gulp.js 가이드](devguide/gulpjs_guide.md)
 
 ## 설치매뉴얼
   * [MyBatis XML 설정](setup/setup_mybatis_config.md)
