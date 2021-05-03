@@ -6,6 +6,8 @@ UCARE 공통 js 의 압축 및 난독화를 위한 내용을 설명합니다.
   - [gulp 시작하기](https://valuefactory.tistory.com/314)
   - [gulp 로 js파일 Minify 및 Merge 하기](https://okayoon.tistory.com/entry/gulp%EB%A1%9C-js-%ED%8C%8C%EC%9D%BC-css%ED%8C%8C%EC%9D%BC-Minify-%EB%B0%8F-Merge%ED%95%98%EA%B8%B0)
 
+
+
 ### Gulp.js 시작하기
 1. Gulp install
     ```
@@ -66,10 +68,11 @@ UCARE 공통 js 의 압축 및 난독화를 위한 내용을 설명합니다.
 
 ### 실행 결과
 - 생성된 dist 폴더   
-![실행결과1](https://user-images.githubusercontent.com/52988840/116836612-21170180-ac02-11eb-9173-bfeb20922894.png)
+<img src="https://user-images.githubusercontent.com/52988840/116836612-21170180-ac02-11eb-9173-bfeb20922894.png">
+
 
 - 압축 및 난독화된 ucare.min.js 파일   
-![실행결과2](https://user-images.githubusercontent.com/52988840/116836615-24aa8880-ac02-11eb-8d4c-9882a50bdea6.png)
+<img src="https://user-images.githubusercontent.com/52988840/116836615-24aa8880-ac02-11eb-8d4c-9882a50bdea6.png">
 
 - ucare.min.js 적용   
-![실행결과3](https://user-images.githubusercontent.com/52988840/116836881-42c4b880-ac03-11eb-9c46-27ba7c78360d.png)
+<img src="https://user-images.githubusercontent.com/52988840/116836881-42c4b880-ac03-11eb-9c46-27ba7c78360d.png" style="width:100%">
