@@ -67,12 +67,11 @@ UCARE 공통 js 의 압축 및 난독화를 위한 내용을 설명합니다.
     ```
 
 ### 실행 결과
-- 생성된 dist 폴더   
-<img src="https://user-images.githubusercontent.com/52988840/116836612-21170180-ac02-11eb-9173-bfeb20922894.png">
+생성된 dist 폴더   
+![실행결과1](https://user-images.githubusercontent.com/52988840/116836612-21170180-ac02-11eb-9173-bfeb20922894.png)
 
+압축 및 난독화된 ucare.min.js 파일   
+![실행결과2](https://user-images.githubusercontent.com/52988840/116836615-24aa8880-ac02-11eb-8d4c-9882a50bdea6.png)
 
-- 압축 및 난독화된 ucare.min.js 파일   
-<img src="https://user-images.githubusercontent.com/52988840/116836615-24aa8880-ac02-11eb-8d4c-9882a50bdea6.png">
-
-- ucare.min.js 적용   
-<img src="https://user-images.githubusercontent.com/52988840/116836881-42c4b880-ac03-11eb-9c46-27ba7c78360d.png" style="width:100%">
+ucare.min.js 적용   
+![실행결과3](https://user-images.githubusercontent.com/52988840/116836881-42c4b880-ac03-11eb-9c46-27ba7c78360d.png)
