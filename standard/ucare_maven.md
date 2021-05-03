@@ -18,7 +18,7 @@ Maven 에 대한 자세한 내용은 다음을 참조
 </settings>
 ```
  - `window>preferences` 메뉴를 선택하여 설정화면을 표시합니다. 설정화면에서 Maven>Installtions 의 User Settings 항목을 [MavenRepository 설치디렉토리]/settings.xml 파일로 설정합니다.
-![](http://www.nexfron.com/ucare_images/eclilpse_maven.jpg)
+![](https://user-images.githubusercontent.com/52988840/116839202-59234200-ac0c-11eb-969c-9d4989e5f500.png)
 
 
 ## 프로젝트 정보(pom.xml)

@@ -94,9 +94,9 @@
 
   따라서 insertConslTypeData 함수의 로그는 찍히지 않는다.
 
-  ![실행로그1](http://www.nexfron.com/ucare_images/batchGuide/resultLog1.png)
+  ![실행로그1](https://user-images.githubusercontent.com/52988840/116839788-8ec92a80-ac0e-11eb-8815-45490a0cc54a.png)
 
 - 이후 cron 표현식으로 설정한 시간마다 실행된다. 이 때는 targetMethod에 설정한 함수를 호출한다.
 
-  ![실행로그2](http://www.nexfron.com/ucare_images/batchGuide/resultLog2.png)
+  ![실행로그2](https://user-images.githubusercontent.com/52988840/116839791-9092ee00-ac0e-11eb-86e6-98fb7d9adff2.png)
   

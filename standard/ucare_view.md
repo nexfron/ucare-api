@@ -16,7 +16,7 @@
 ### 기본 화면구조
   다음과 같은 화면을 기본 구조로 합니다.
 
-  ![이미지](http://www.nexfron.com/ucare_images/ucare_view.jpg)
+  ![이미지](https://user-images.githubusercontent.com/52988840/116840046-786f9e80-ac0f-11eb-866d-c0f2d3c3b17c.png)
 
   1. 조회조건부가 위치하며, 조회 조건은 입력 된 값으로 조회됩니다.  
     조회 값을 입력하지 않으면 조회조건에서 제외되어 조회됩니다. 
